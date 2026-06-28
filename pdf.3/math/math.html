@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Math</title>
+    <link rel="stylesheet" href="math.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+<nav class="math-navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-square-root-alt"></i>
+            <span>Math<span style="font-weight: 500;">Master</span></span>
+        </div>
+
+
+        <div class="nav-links">
+            <a href="#"  class="home-btn" id="returnHomeBtn"><i class="fas fa-arrows-left"></i> Home</a>
+            <a href="#algebra"> <i class="fas fa-chart-line"></i>Algebra</a>
+            <a href="#geometry"><i class="fas fa-shapes"></i>Geometry</a>
+            <a href="#mensuration"><i class="fas fa-cube"></i>Mensuration</a>
+            <a href="#units"><i class="fas fa-ruler-combined"></i>Unit Convert</a>
+            <a href="#formula"> <i class="fas fa-scroll"></i>Formulas</a>
+        </div>
+
+    </div>
+</nav>
+    
+<div class="hero-math">
+    <h1>Mathematics Playground </h1>
+    <p> Algebra · Geometry · Mensuration · Unit conversion & smart calculator </p>
+</div>
+
+<div class="container">
+    <div class="math-card" id="algebra">
+        <div class="card-header">
+            <h2><i class="fas fa-calculator"></i>Algebra · Equations & Solvers</h2>
+        </div>
+        <div class="tool-grid">
+         <div class="tool-widget">
+            <h3><i class="fas fa-square-root-alt"></i>Quadratic solver</h3>
+            <div class="input-row"><label>a · x²</label><input type="number" id="quadA" value="1" step="any"></div>
+            <div class="input-row"><label>b · x</label><input type="number" id="quadB" value="-4" step="any"></div>   
+            <div class="input-row"><label>c (constant)</label><input type="number" id="quadC" value="3" step="any"></div>
+            <button id="solveQuadraticBtn"><i class="fas fa-brain"></i>Find Roots</button>
+            <div class="result-panel" id="quadraticResult">x₁ = 3.000, x₂ = 1.000</div>
+         </div>
+        </div>
+
+        <div class="tool-widget">
+            <h3><i class="fas fa-chart-simple"></i>Linear Solver</h3>
+            <div class="input-row"><label>ax + b = 0</label></div>
+            <div class="input-row"><label>ax + b = 0</label></div>
+            <div class="input-row"><label>Cofficient (a) </label><input type="number"  id="linA" value="3" step="any"></div>
+            <div class="input-row"><label>Cofficient (b) </label><input type="number"  id="linB" value="-9" step="any"></div>
+            <button id="solveLinearBtn"><i class="fas fa-equals"></i>Solve x</button>
+            <div class="result-panel" id="linearResult">x = 3.000</div>
+        </div>
+
+        <div class="tool-widget">
+            <h3><i class="fas fa-th"></i>System of 2 Equations</h3>
+            <div class="input-row">
+            <label>Eq2: a₂x + b₂y = c₂</label>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <input type="number" id="sysA2" value="1" placeholder="a2" style="width: 30%;">
+            <span>x +</span>
+                   <input type="number" id="sysB2" value="1" placeholder="b2" style="width: 30%;">
+                <span>y =</span>
+                <input type="number" id="sysC2" value="5" placeholder="c2" style="width:30%">
+    </div>
+</div>
+            <button id="solveSystemBtn"><i class="fas fa-microchip"></i> Solve System</button>
+            <div class="result-panel" id="systemResult">x = 2.00, y= 1.00</div>
+        </div>
+    </div>
+</div>
+
+<div class="math-card" id="geometry">
+    <div class="card-header">
+        <h2><i class="fas fa-draw-polygon"></i>Geometry Shape & Theorem</h2>
+    </div>
+    <div class="tool-grid">
+        <div class="tool-widget">
+            <h3><i class="fas fa-triangle"></i> Pythagoren Theorem</h3>
+            <div class="input-row"><label>Leg a</label><input type="number" id="pythLegA" value="6" step="any"></div>
+            <div class="input-row"><label>Leg b</label><input type="number" id="pythLegB" value="8" step="any"></div>
+            <button id="pythagorasBtn"><i class="fas fa-calculator"></i> Hypotenuse</button>
+            <div class="result-panel" id="pythagorasResult"></div>
+        </div>
+
+        <div class="tool-widget">
+             <h3><i class="fas fa-circle"></i> Circle calculator</h3>
+             <div class="input-row"><label>Radius (r)</label><input type="number" id="circleRadius" value="5" step="any"></div>
+             <button id="circleBtn"><i class="fas fa-chart-pie"></i> Compute</button>
+             <div class="result-panel" id="circleResult">Area = 78.54 | perimeter = 31.42</div>
+        </div>
+    
+
+    <div class="tool-widget">
+
+        <h3><i class="fas fa-square"></i>Rectangle</h3>
+        <div class="input-row"><label>Length</label><input type="number" id="rectLen" value="12"></div>
+        <div class="input-row"><label>Width</label><input type="number" id="rectWid" value="7"></div>
+        <button id="rectBtn"><i class="fas fa-border-all"></i>Area & Perimeter</button>
+        <div class="result-panel" id="rectResult" > Area = 84 || Perimeter = 38</div>
+     </div>
+
+    </div>
+</div>
+
+<div class="math-card" id="mensuration">
+    <div class="card-header">
+        <h2><i class="fas fa-cube"></i> Mensuration · Volume & Surface (3D)</h2>
+    </div>
+    <div class="tool-grid">
+        <div class="tool-widget">
+            <h3><i class="fas fa-cube"></i>Cuboid / Box</h3>
+            <div class="input-row"><label>Length</label><input type="number" id="cubL" value="5"></div>
+            <div class="input-row"><label>Width</label><input type="number" id="cubW" value="4"></div>
+            <div class="input-row"><label></label>Height <input type="number" id="cubH" value="6"></div>
+            <button id="cuboidBtn"><i class="fas fa-cube"></i>Volume and surface area</button>
+            <div class="result-panel" id="cuboidResult">Volume = 120 | surface =148</div>
+        </div>
+    </div>
+        <div class="tool-widget">
+            <h3><i class="fas fa-globe"></i>Sphere</h3>
+                <div class="input-row"><label>Radius</label><input type="number" id="sphereR" value="3"></div>
+                <button id="sphereBtn"><i class="fas fa-basketball"></i>Volume / Surface</button>
+                <div class="result-panel" id="sphereResult">Vol = 113.10 | surf = 113.10</div>
+        </div>
+        <div class="tool-widget">
+            <h3><i class="fas fa-cylinder"></i>Cylinder</h3>
+            <div class="input-row"><label>Radius</label><input type="number" id="cylR" value="4"></div>
+            <div class="input-row"><label>Height</label><input type="number" id="cylH" value="10"></div>
+            <button id="cylinderBtn"><i class="fas fa-oil-can"></i> Compute</button>
+            <div class="result-panel" id="cylinderResult">Volume = 502 | surface = 351</div>
+        </div>
+    </div>
+</div>
+
+<div class="math-card" id="units">
+    <div class="class-header">
+        <h2><i class="fas fa-ruler-combined"></i> Unit Converter · Length / Area</h2>
+    </div>
+    <div class="tool-grid">
+        <div class="tool-widget">
+            <h3><i class="fas fa-arrows-left-right"></i>Length Converter</h3>
+            <div class="input-row"><label>Value</label><input type="number" id="lenVal" value="1"></div>
+            <div class="input-row"><label>From</label>
+            <select id="lenFrom">
+                <option value="m">Meter (m)</option>
+                <option value="cm">Centimeter (cm)</option>
+                <option value="mm">Millimeter (mm)</option>
+            </select>
+            </div>
+            <div class="input-row"><label>To</label>
+            <select  id="lenTo">
+                <option value="cm">Centimeter (cm)</option>
+                <option value="m">Meter (m)</option>
+                <option value="mm">mm</option>
+            </select>
+            </div>
+            <button id="lengthConvBtn"><i class="fas fa-exchange-alt"></i>Convert</button>
+            <div class="result-panel" id="lengthResult">1 m = 100cm</div>
+        </div>
+        <div class="tool-widget">
+            <h3><i class="fas fa-chart-area"></i> Area Converter (m²/cm²)</h3>
+            <div class="input-row"><label>Value</label><input type="number" id="areaVal" value="1"></div>
+            <div class="input-row"><label>From</label>
+            <select id="areaFrom">
+                <option value="m2">m²</option>
+                <option value="cm2">cm²</option>
+           </select>
+            </div>
+            <button id="areaConvBtn"><i class="fas fa-dice-d6"></i> Convert Area</button>
+            <div class="result-panel" id="areaResult">1 m² = 10000 cm²</div>
+        </div>
+    </div>
+</div>
+
+<div class="math-card" id="formulas">
+    <div class="card-header">
+        <h2><i class="fas fa-scroll"></i> Essential Formulas </h2>
+    </div>
+    <div class="formula-strip">
+
+        <div class="formula-badge"><h4>Quadratic Formula</h4><p>x = [-b ± √(b²-4ac)]/2a</p></div>
+        <div class="formula-badge"><h4>Sphere Volume</h4><p>V = 4/3 π r³</p></div>
+        <div class="formula-badge"><h4>Circle</h4><p>A = πr² , C = 2πr</p></div>
+        <div class="formula-badge"><h4>Heron's Formula</h4><p>Area = √[s(s-a)(s-b)(s-c)]</p></div>
+    </div>
+    <div class="math-saire">
+        <i class="fas fa-lightbulb"></i>
+        <blockquote>“Pure mathematics is, in its way, the poetry of logical ideas.” — Albert Einstein</blockquote>
+        <i class="fas fa-smile-wink"></i>
+        <blockquote>Why is 6 afraid of 7? Because 7 8 9!</blockquote>
+    </div>
+    <div class="math-trivia">
+        <i class="fas fa-chart-line"></i> <strong>Math Saire:</strong>
+        The number π (pi) has been calculated to over 62.8 trillion decimal places — infinite wonder! 
+    </div>
+</div>
+
+<footer>
+    <i class="fas fa-square-root-alt"></i> 
+    MathMaster — Interactive Calculus & Geometry Hub | Real-time tools
+    Made by sugam.pahak| In future note of PCM will be uploader over this platform
+</footer>
+
+<script src="math.js"></script>
+</body>
+</html>

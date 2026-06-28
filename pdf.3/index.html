@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>PCM</title>
+   
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-atom"></i>
+                <span>Sci<span style="font-weight:500">Port</span></span>
+            </div>
+            <div class="nav-links">
+                <div class="nav-search-wrapper" style="margin-left: auto;">
+                    <div style="background: rgba(255, 255, 240, 0.15); border-radius: 60px; padding: 6px 16px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-search" style="color: #aacde2;"></i>
+                        <input type="text" id="navSearch" placeholder="Search subjects......" style="background: transparent; border: none; color: white; outline: none; padding: 8px 0; width: 200px;">
+                    </div>
+                </div>
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#subjects"><i class="fas fa-book-open"></i> Subjects</a>
+                <a href="#footer-tools"><i class="fas fa-tools"></i> Converters</a>
+                <a href="#"><i class="fas fa-user-graduate"></i> Academy</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <h1>Explore . Convert . Master</h1>
+            <p>Your interactive STEM hub - flip any card to dive into Physics, Chemistry, or Mathematics. Real-time Converters and  tools included. </p>
+
+        </div>
+
+        <div class="flip-section" id="subjects">
+            <div class="section-title"> Choose your domain <i class="fas fa-arrows-spin"></i> Hover flip</div>
+            <div class="flip-grid">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-front math-front">
+                            <i class="fas fa-square-root-alt"></i>
+                            <h3>Mathematics</h3>
+                            <p style="font-size: 0.9rem; color: #4b6f8a;">Algebra . Calculus . Geometry</p>
+                        </div>
+                        <div class="flip-back">
+                            <i class="fas fa-chalkboard-user" style="font-size: 2.5em;"></i>
+                            <p>Equations solvers, trig tools, matrix basics and more. Dive into math world.</p>
+                            <a href="math/math.html" class="btn-explore" id="mathPageLink">Explore Math</a>                            
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-front physics-front">
+                            <i class="fas fa-microscope"></i>
+                            <h3>Physics</h3>
+                            <p style="font-size: 0.9em; color: #4b6f8a;">Mechanics . Energy . Relativity</p>
+                        </div>
+                        <div class="flip-back">
+                            <i class="fas fa-gravity" style="font-size:2.5rem;"></i>
+                            <p>Unit Converters, motion laws, quantum hints – interactive physics lab.</p>
+                            <a href="#" class="btn-explore" id="physicsPageLink">Explore Physics →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- chemistry-->
+                 <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-front chem-front">
+                            <i class="fas fa-flask"></i>
+                            <h3>Chemistry</h3>
+                            <p style="font-size:0.9rem; color:#4b6f8a;">Moles · Reactions · Periodic</p>
+                        </div>
+                        <div class="flip-back">
+                            <i class="fas fa-dna" style="font-size: 2.5rem;"></i>
+                            <p>Molarity, stoichiometry, concentration tools & organic chem resources.</p>
+                            <a href="#" class="btn-explore" id="chemPageLink">Explore Chemistry →</a>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-tools" id="footer-tools">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4><i class="fas fa-calculator"></i> Math Toolbox</h4>
+                <div class="tool-item">
+                    <label >  Pythagoren Theorem (a²+b²=c²)</label>
+                    <input type="number" id="footMathA" placeholder="Leg a" value="3" step="any">
+                    <input type="number" id="footMathB" placeholder="Leg b" value="4" step="any" style="margin-top:6px;">
+                    <button id="footHypBtn">Compute Hypotenuse</button>
+                    <div class="result-badge" id="footMathResult"> c = 5.00</div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4><i class="fas fa-bolt"></i> Physics: Energy</h4>
+                <div class="tool-item">
+                    <label> Joule ↔ eV </label>
+                    <input type="number" id="footEnergyVal" placeholder="Energy" value="1">
+                    <select id="footEnergyDir" style="background: #1e3a48; margin: 6px 0;">
+                        <option value="JtoeV">Joule → eV</option>
+                        <option value="eVtoJ">eV → Joules</option>
+                    </select>
+                    <button id="footEnergyConv">Convert</button>
+                    <div class="result-badge" id="footEnergyRes">1 J = 6.242e+18 eV</div>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4><i class="fas fa-vial"></i> Chemistry: Moles/Grams</h4>
+                <div class="tool-item">
+                 <label>⚗️ Molar mass (g/mol) :</label>
+                 <input type="number" id="footMolarMass" placeholder="e.g., 58.44" value="58.44">
+                 <label style="margin-top: 8px;">Moles :</label>
+                 <input type="number" id="footMoles" placeholder="mol" value="2.0">
+                 <button id="footCalcGrams">→ Grams</button>
+                 <div class="result-badge" id="footGramResult">116.88 g</div>
+               </div>
+            </div>
+        </div>
+        <div class="copyright">
+           <i class="fas fa-flask"></i> SciPort — Interactive Learning Suite | Real-time converters | Flip to discover subjects<br>
+            © 2025 STEM Hub | Designed for explorers
+        </div>
+    </footer>
+    <script src="index.js"></script>
+
+</body>
+</html>
