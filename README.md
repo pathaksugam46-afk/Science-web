@@ -22,18 +22,19 @@ This project is under development.
 
 Currently available:
 
-- ✅ Home Page
-- ✅ Math Page
+- Home Page
+- 
+- Math Page
 
 Coming soon:
 
 -  Physics Solver
--  Chemistry Solver
+-  Chemistry Solver    
 -  Formula library
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies  Used
 
 - HTML5
 - CSS3
@@ -54,7 +55,7 @@ git clone https://https://github.com/pathaksugam46-afk/Science-web
 
 ## Project Goal
 
-The goal of this project is to create one website where students can easily solve:
+The goal of this project is to create one website w here students can easily solve:
 
 - Math numerical problems
 - Physics numerical problems
